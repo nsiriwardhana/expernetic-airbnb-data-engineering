@@ -4,6 +4,16 @@ A reproducible data engineering and analytical project built for the Expernetic 
 
 The project processes the Singapore Inside Airbnb dataset dated **29 June 2026**. It covers data profiling, cleaning, validation, enrichment, dimensional modelling, SQL analysis, exploratory data analysis, statistical testing, and an interactive Streamlit dashboard.
 
+## Live Dashboard
+
+The deployed Streamlit dashboard is available here:
+
+[Open the Singapore Airbnb Market Intelligence Dashboard](https://nipuni-airbnb-dashboard.streamlit.app/)
+
+GitHub repository:
+
+[expernetic-airbnb-data-engineering](https://github.com/nsiriwardhana/expernetic-airbnb-data-engineering)
+
 ## Project Objectives
 
 The project was designed to:
@@ -38,6 +48,8 @@ Completed areas include:
 - automated tests
 - pipeline logging and orchestration
 - architecture and data model documentation
+- Streamlit Community Cloud deployment
+- AI usage disclosure
 
 The following optional areas were not prioritised:
 
@@ -45,7 +57,6 @@ The following optional areas were not prioritised:
 - machine-learning price prediction
 - NLP and review sentiment analysis
 - RAG or LLM applications
-- cloud deployment
 - Airflow or Prefect orchestration
 - full change data capture
 - MLOps deployment
@@ -110,6 +121,44 @@ Latest model counts:
 
 All implemented duplicate-key and orphan-key schema checks passed.
 
+## Dashboard Deployment Data Layer
+
+The main analytical pipeline processes the complete Singapore dataset, including:
+
+- 3,247 listings
+- 1,185,155 calendar observations
+- 41,265 detailed reviews
+
+The deployed Streamlit application uses a compact serving database generated from the complete analytical DuckDB model.
+
+No listings are sampled or removed. The serving database contains all 3,247 listing-level records. Calendar and review records are aggregated to monthly level because the dashboard displays monthly market-wide trends and does not require every row-level record at runtime.
+
+The serving database validation produced:
+
+| Measure | Value |
+|---|---:|
+| Source listing rows | 3,247 |
+| Dashboard listing rows | 3,247 |
+| Source calendar rows used | 1,185,155 |
+| Monthly availability rows created | 14 |
+| Source review rows used | 41,265 |
+| Monthly review rows created | 180 |
+| Serving database size | 1.26 MB |
+
+The full analytical database remains reproducible with:
+
+```bash
+python -m src.pipeline
+```
+
+The dashboard serving database is generated with:
+
+```bash
+python -m src.create_dashboard_database
+```
+
+This separation reduces deployment size and query cost while preserving the complete population used in dashboard calculations.
+
 ## Repository Structure
 
 ```text
@@ -117,7 +166,8 @@ expernetic-airbnb-data-engineering/
 ├── config/
 │   └── config.yaml
 ├── dashboard/
-│   └── app.py
+│   ├── app.py
+│   └── requirements.txt
 ├── data/
 │   ├── raw/
 │   ├── processed/
@@ -154,7 +204,8 @@ expernetic-airbnb-data-engineering/
 │   ├── build_database.py
 │   ├── run_sql_analysis.py
 │   ├── pipeline.py
-│   └── create_diagrams.py
+│   ├── create_diagrams.py
+│   └── create_dashboard_database.py
 ├── tests/
 │   ├── test_clean_data.py
 │   ├── test_validation.py
@@ -187,7 +238,7 @@ expernetic-airbnb-data-engineering/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/nsiriwardhana/expernetic-airbnb-data-engineering.git
 cd expernetic-airbnb-data-engineering
 ```
 
@@ -268,15 +319,21 @@ python -m pytest
 
 ## Run the Interactive Dashboard
 
-Build the database first:
+The deployed dashboard is available at:
+
+[https://nipuni-airbnb-dashboard.streamlit.app/](https://nipuni-airbnb-dashboard.streamlit.app/)
+
+The repository includes the compact dashboard serving database, so the dashboard can also be started locally after installing the project dependencies:
+
+```bash
+python -m streamlit run dashboard/app.py
+```
+
+To recreate the dashboard serving database from the complete analytical model:
 
 ```bash
 python -m src.build_database
-```
-
-Then run:
-
-```bash
+python -m src.create_dashboard_database
 python -m streamlit run dashboard/app.py
 ```
 
@@ -351,7 +408,8 @@ Key decisions include:
 - aggregating calendar and review data before listing-level joins
 - implementing a dimensional model in DuckDB
 - using non-parametric statistical tests
-- building a locally runnable Streamlit dashboard
+- building a compact dashboard serving layer
+- deploying the dashboard with Streamlit Community Cloud
 
 The full decision log is available in `docs/decision_log.md`.
 
@@ -365,6 +423,7 @@ data/validated/
 data/quarantine/
 data/enriched/
 outputs/database/airbnb_singapore.duckdb
+outputs/database/airbnb_dashboard_serving.duckdb
 outputs/data_quality/
 outputs/tables/sql_analysis/
 outputs/tables/eda/
@@ -383,7 +442,7 @@ outputs/logs/
 - Reviews do not represent every completed stay.
 - A one-city design does not demonstrate cross-city schema harmonisation.
 - Statistical tests describe associations and do not establish causation.
-- The dashboard is locally runnable unless separately deployed.
+- Monthly deployment tables are intended for dashboard trends rather than row-level calendar or review analysis.
 
 ## Future Improvements
 
@@ -394,7 +453,7 @@ outputs/logs/
 - dbt models and tests
 - workflow orchestration
 - Docker packaging
-- automated dashboard deployment
+- automated refresh of the deployed serving database
 - price prediction
 - review sentiment and topic analysis
 - monitoring, alerting, and SLA reporting
@@ -411,11 +470,13 @@ The full disclosure is documented in `docs/ai_usage_disclosure.md`.
 
 A reviewer should be able to reproduce the main outputs by:
 
-1. creating the Python environment
-2. installing `requirements.txt`
-3. downloading the Singapore source files
-4. placing them under `data/raw/singapore/`
-5. running `python -m pytest`
-6. running `python -m src.pipeline`
-7. launching `python -m streamlit run dashboard/app.py`
-
+1. cloning the repository
+2. creating the Python environment
+3. installing `requirements.txt`
+4. downloading the Singapore source files
+5. placing them under `data/raw/singapore/`
+6. running `python -m pytest`
+7. running `python -m src.pipeline`
+8. running the EDA and statistical notebooks
+9. running `python -m src.create_dashboard_database`
+10. launching `python -m streamlit run dashboard/app.py`
