@@ -1,0 +1,13 @@
+query_name,status,output_rows,output_file,error_message
+market_overview,success,1,outputs\tables\sql_analysis\market_overview.csv,
+room_type_performance,success,4,outputs\tables\sql_analysis\room_type_performance.csv,
+neighbourhood_market_summary,success,35,outputs\tables\sql_analysis\neighbourhood_market_summary.csv,
+host_segment_summary,success,5,outputs\tables\sql_analysis\host_segment_summary.csv,
+top_hosts_by_listing_count,success,20,outputs\tables\sql_analysis\top_hosts_by_listing_count.csv,
+host_market_concentration,success,1,outputs\tables\sql_analysis\host_market_concentration.csv,
+superhost_comparison,success,3,outputs\tables\sql_analysis\superhost_comparison.csv,
+price_by_review_volume,success,5,outputs\tables\sql_analysis\price_by_review_volume.csv,
+monthly_review_activity,success,180,outputs\tables\sql_analysis\monthly_review_activity.csv,
+monthly_availability,success,14,outputs\tables\sql_analysis\monthly_availability.csv,
+minimum_nights_by_room_type,success,4,outputs\tables\sql_analysis\minimum_nights_by_room_type.csv,
+listing_source_coverage,success,2,outputs\tables\sql_analysis\listing_source_coverage.csv,

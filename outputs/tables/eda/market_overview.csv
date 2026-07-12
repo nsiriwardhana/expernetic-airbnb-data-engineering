@@ -1,0 +1,2 @@
+total_listings,total_hosts,total_neighbourhoods,listings_with_price,missing_price_count,median_price,average_price,price_25th_percentile,price_75th_percentile,price_95th_percentile,maximum_price,listings_with_reviews
+3247,762,42,2742,505,130.05,204.24,45.48,250.0,578.23,13000.0,1839

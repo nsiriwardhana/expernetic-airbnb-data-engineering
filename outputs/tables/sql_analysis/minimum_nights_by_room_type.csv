@@ -1,0 +1,5 @@
+room_type,listing_count,median_minimum_nights,average_minimum_nights,lowest_minimum_nights,highest_minimum_nights
+Private room,1870,92.0,53.92,1,730
+Entire home/apt,1226,6.0,46.43,1,365
+Hotel room,83,6.0,44.48,1,92
+Shared room,68,1.0,4.04,1,92

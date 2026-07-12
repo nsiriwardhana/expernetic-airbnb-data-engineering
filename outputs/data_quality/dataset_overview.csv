@@ -1,0 +1,7 @@
+dataset,rows,columns,duplicate_rows,total_missing_values,memory_mb
+Detailed Listings,3097,90,0,63211,12.42
+Summary Listings,3247,19,0,5555,1.61
+Calendar,1185155,5,0,0,150.32
+Detailed Reviews,41265,6,0,17,18.46
+Summary Reviews,41265,2,3165,0,2.64
+Neighbourhoods,55,2,0,0,0.01
