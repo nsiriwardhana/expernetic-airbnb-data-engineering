@@ -31,7 +31,7 @@ DATABASE_PATH = (
     PROJECT_ROOT
     / "outputs"
     / "database"
-    / "airbnb_singapore.duckdb"
+    / "airbnb_dashboard_serving.duckdb"
 )
 
 STATISTICS_PATH = (
@@ -66,10 +66,19 @@ COMPLETENESS_REPORT_PATH = (
 )
 def load_dashboard_data(
     database_path: str
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+) -> tuple[
+    pd.DataFrame,
+    pd.DataFrame,
+    pd.DataFrame,
+    pd.DataFrame
+]:
     """
-    Load listing, monthly availability, and monthly review
-    data from DuckDB.
+    Load the compact dashboard serving tables from DuckDB.
+
+    The serving database is generated from the complete
+    analytical database. It retains every listing and stores
+    monthly calendar and review aggregates calculated from
+    the complete source fact tables.
     """
     connection = duckdb.connect(
         database_path,
@@ -79,163 +88,35 @@ def load_dashboard_data(
     try:
         listings = connection.execute(
             """
-            SELECT
-                listing.listing_id,
-                listing.listing_name,
-                listing.property_type,
-                listing.room_type,
-                listing.accommodates,
-                listing.bedrooms,
-                listing.beds,
-                listing.latitude,
-                listing.longitude,
-                listing.record_source,
-                listing.has_detailed_record,
-
-                host.host_id,
-                host.host_name,
-                host.host_is_superhost,
-                host.host_portfolio_size,
-                host.host_segment,
-
-                neighbourhood.neighbourhood_name,
-
-                facts.price,
-                facts.minimum_nights,
-                facts.maximum_nights,
-                facts.number_of_reviews,
-                facts.review_scores_rating,
-                facts.availability_30,
-                facts.availability_60,
-                facts.availability_90,
-                facts.availability_365,
-                facts.estimated_occupancy_proxy,
-                facts.estimated_availability_rate,
-                facts.detailed_review_count,
-                facts.host_tenure_years,
-                facts.price_per_bedroom,
-                facts.price_per_guest,
-                facts.reviews_per_host_year
-
-            FROM dim_listing AS listing
-
-            LEFT JOIN dim_host AS host
-                ON listing.host_key = host.host_key
-
-            LEFT JOIN dim_neighbourhood AS neighbourhood
-                ON listing.neighbourhood_key
-                    = neighbourhood.neighbourhood_key
-
-            INNER JOIN fact_listing_snapshot AS facts
-                ON listing.listing_key
-                    = facts.listing_key
+            SELECT *
+            FROM dashboard_listings
             """
         ).fetchdf()
 
         monthly_availability = connection.execute(
             """
-            SELECT
-                dates.year_number,
-                dates.month_number,
-                dates.month_name,
-
-                COUNT(*) AS calendar_observations,
-
-                SUM(
-                    CASE
-                        WHEN calendar.available = TRUE
-                        THEN 1
-                        ELSE 0
-                    END
-                ) AS available_days,
-
-                SUM(
-                    CASE
-                        WHEN calendar.available = FALSE
-                        THEN 1
-                        ELSE 0
-                    END
-                ) AS unavailable_days,
-
-                ROUND(
-                    AVG(
-                        CASE
-                            WHEN calendar.available = TRUE
-                            THEN 1.0
-                            WHEN calendar.available = FALSE
-                            THEN 0.0
-                            ELSE NULL
-                        END
-                    ) * 100,
-                    2
-                ) AS availability_rate_percentage,
-
-                ROUND(
-                    (
-                        1 - AVG(
-                            CASE
-                                WHEN calendar.available = TRUE
-                                THEN 1.0
-                                WHEN calendar.available = FALSE
-                                THEN 0.0
-                                ELSE NULL
-                            END
-                        )
-                    ) * 100,
-                    2
-                ) AS occupancy_proxy_percentage
-
-            FROM fact_calendar AS calendar
-
-            INNER JOIN dim_date AS dates
-                ON calendar.date_key = dates.date_key
-
-            GROUP BY
-                dates.year_number,
-                dates.month_number,
-                dates.month_name
-
+            SELECT *
+            FROM dashboard_monthly_availability
             ORDER BY
-                dates.year_number,
-                dates.month_number
+                year_number,
+                month_number
             """
         ).fetchdf()
 
         monthly_reviews = connection.execute(
             """
-            SELECT
-                dates.year_number,
-                dates.month_number,
-                dates.month_name,
-
-                COUNT(*) AS review_count,
-
-                COUNT(
-                    DISTINCT reviews.listing_key
-                ) AS listings_reviewed,
-
-                COUNT(
-                    DISTINCT reviews.reviewer_id
-                ) AS unique_reviewers,
-
-                ROUND(
-                    AVG(reviews.review_length),
-                    2
-                ) AS average_review_length
-
-            FROM fact_reviews AS reviews
-
-            INNER JOIN dim_date AS dates
-                ON reviews.date_key = dates.date_key
-
-            GROUP BY
-                dates.year_number,
-                dates.month_number,
-                dates.month_name
-
+            SELECT *
+            FROM dashboard_monthly_reviews
             ORDER BY
-                dates.year_number,
-                dates.month_number
+                year_number,
+                month_number
+            """
+        ).fetchdf()
+
+        dashboard_metadata = connection.execute(
+            """
+            SELECT *
+            FROM dashboard_metadata
             """
         ).fetchdf()
 
@@ -245,7 +126,8 @@ def load_dashboard_data(
     return (
         listings,
         monthly_availability,
-        monthly_reviews
+        monthly_reviews,
+        dashboard_metadata
     )
 
 
@@ -328,8 +210,8 @@ def prepare_numeric_columns(
 
 if not DATABASE_PATH.exists():
     st.error(
-        "The DuckDB database was not found. "
-        "Run `python -m src.build_database` first."
+        "The dashboard serving database was not found. "
+        "Run `python -m src.create_dashboard_database` first."
     )
     st.stop()
 
@@ -337,7 +219,8 @@ try:
     (
         listings,
         monthly_availability,
-        monthly_reviews
+        monthly_reviews,
+        dashboard_metadata
     ) = load_dashboard_data(
         str(DATABASE_PATH)
     )
@@ -348,8 +231,9 @@ except Exception as error:
     )
 
     st.info(
-        "Close any notebook connection using the database "
-        "and rebuild it with `python -m src.build_database`."
+        "Close any application using the database and rebuild "
+        "the serving layer with "
+        "`python -m src.create_dashboard_database`."
     )
 
     st.stop()
@@ -607,6 +491,30 @@ st.sidebar.caption(
     "Monthly calendar and review trends remain market-wide."
 )
 
+if not dashboard_metadata.empty:
+    source_calendar_rows = int(
+        dashboard_metadata.loc[
+            0,
+            "source_calendar_rows"
+        ]
+    )
+
+    source_review_rows = int(
+        dashboard_metadata.loc[
+            0,
+            "source_review_rows"
+        ]
+    )
+
+    st.sidebar.caption(
+        "Serving layer lineage: "
+        f"{len(listings):,} complete listing records, "
+        f"monthly availability calculated from "
+        f"{source_calendar_rows:,} calendar rows, and "
+        f"monthly review activity calculated from "
+        f"{source_review_rows:,} review rows."
+    )
+
 
 # ---------------------------------------------------------
 # Main heading
@@ -617,7 +525,9 @@ st.title(
 )
 
 st.caption(
-    "Inside Airbnb dataset snapshot dated 29 June 2026"
+    "Inside Airbnb dataset snapshot dated 29 June 2026. "
+    "The dashboard serving layer was generated from the "
+    "complete analytical model."
 )
 
 if filtered_listings.empty:
@@ -1633,6 +1543,48 @@ elif page == "Data Quality":
             validation_report,
             use_container_width=True,
             hide_index=True
+        )
+
+    if not dashboard_metadata.empty:
+        st.subheader(
+            "Dashboard Serving-Layer Lineage"
+        )
+
+        lineage_display = (
+            dashboard_metadata[
+                [
+                    "generated_at",
+                    "source_listing_rows",
+                    "dashboard_listing_rows",
+                    "source_calendar_rows",
+                    "dashboard_availability_rows",
+                    "source_review_rows",
+                    "dashboard_review_rows"
+                ]
+            ]
+            .rename(
+                columns={
+                    "generated_at": "Generated At",
+                    "source_listing_rows": "Source Listing Rows",
+                    "dashboard_listing_rows": "Dashboard Listing Rows",
+                    "source_calendar_rows": "Source Calendar Rows",
+                    "dashboard_availability_rows": "Monthly Availability Rows",
+                    "source_review_rows": "Source Review Rows",
+                    "dashboard_review_rows": "Monthly Review Rows"
+                }
+            )
+        )
+
+        st.dataframe(
+            lineage_display,
+            use_container_width=True,
+            hide_index=True
+        )
+
+        st.caption(
+            "The deployment database keeps all listing records. "
+            "Calendar and review facts are aggregated only after "
+            "the complete source tables are processed."
         )
 
     st.subheader("Known Limitations")
