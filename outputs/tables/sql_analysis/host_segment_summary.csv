@@ -1,0 +1,6 @@
+host_segment,host_count,listing_count,listing_share_percentage,median_price,average_rating,average_occupancy_proxy_percentage
+Large Operator,19,1279,39.39,162.69,4.59,12.7
+Medium Portfolio,79,721,22.21,158.2,4.51,23.78
+Small Portfolio,216,649,19.99,89.6,4.47,33.59
+Single Listing,448,448,13.8,43.76,4.6,34.42
+Unknown,0,150,4.62,152.5,,19.99

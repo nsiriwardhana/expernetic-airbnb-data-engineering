@@ -1,0 +1,21 @@
+host_id,host_name,host_segment,host_is_superhost,listing_count,median_price,average_rating,average_occupancy_proxy_percentage
+138649185,Sidharth,Large Operator,False,215,164.47,4.68,3.89
+238891646,Neha,Large Operator,False,131,149.76,4.59,5.98
+2413412,Kaurus,Large Operator,False,91,16.32,4.58,8.57
+8948251,Joey,Large Operator,False,73,16.08,4.52,8.66
+109333133,Pat,Large Operator,False,73,244.24,4.58,21.89
+23336011,Heritage,Large Operator,True,71,143.0,4.79,6.74
+46685310,Yyin,Large Operator,False,71,221.44,4.51,10.19
+10248444,Recr,Large Operator,False,64,220.02,4.45,11.47
+61619807,Ong,Large Operator,False,60,234.49,4.37,12.51
+97878860,Chess,Large Operator,False,59,18.04,4.55,8.26
+24496358,Katherine,Large Operator,True,53,235.46,4.82,24.87
+300765938,Xacco,Large Operator,False,52,92.26,,9.93
+68059127,Wei,Large Operator,True,50,228.58,4.81,19.25
+1439258,K2Guesthouse,Large Operator,False,44,219.0,4.41,37.53
+201775246,Hillary,Large Operator,False,44,18.56,4.43,8.44
+404487343,OngRR,Large Operator,False,43,243.05,4.51,12.99
+2676835,Hsoloscargo Residentcubes,Large Operator,False,35,438.0,4.79,65.14
+148161755,Jan,Large Operator,True,26,344.59,4.83,8.75
+108773366,RedDoorz,Large Operator,False,24,41.91,4.22,23.38
+101145755,Yulie,Medium Portfolio,False,19,70.8,4.31,20.88

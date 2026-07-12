@@ -1,0 +1,2 @@
+dataset,quality_issue,affected_rows,affected_percentage,severity,action
+listing_master,missing_price,505,15.5528,warning,Retained as an explicit null and excluded only from price-specific analysis

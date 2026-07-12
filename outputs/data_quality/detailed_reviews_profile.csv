@@ -1,0 +1,7 @@
+dataset,column_name,data_type,row_count,null_count,null_percentage,unique_count,sample_values,minimum,maximum,mean
+Detailed Reviews,listing_id,int64,41265,0,0.0,1839,71609 | 71896 | 71903,71609.0,1.6758613550476716e+18,3.324450613762373e+17
+Detailed Reviews,id,int64,41265,0,0.0,41265,793880 | 1731810 | 2162194,251467.0,1.7186922109350587e+18,7.726037891481034e+17
+Detailed Reviews,date,str,41265,0,0.0,4469,2011-12-19 | 2012-07-17 | 2012-09-01,,,
+Detailed Reviews,reviewer_id,int64,41265,0,0.0,38902,1456140 | 1804182 | 3113461,14922.0,1.708357238981654e+18,1383237791908139.8
+Detailed Reviews,reviewer_name,str,41265,0,0.0,17990,Max | Jaiya | Zahra,,,
+Detailed Reviews,comments,str,41265,17,0.04,39345,"The rooms were clean and tidy. Beds very comfortable.<br/>Thank you Belinda. | Good space and quite an interesting home in a quiet location - a lovely park across the road which is rare in Singapore. Nice place to stay if you are in big group as we were. | It was a comfortable place. Belinda was a kind and helpful woman who helped us have a nice accommodation there and find tourism sites easily. The place was beautiful and calm. The maids were helpful too.<br/>Totally it was very nice trip. BEAUTIFUL SINGAPORE",,,

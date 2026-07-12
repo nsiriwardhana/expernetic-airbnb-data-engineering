@@ -1,0 +1,10 @@
+schema_check,issue_count,passed
+Duplicate dim_listing listing_key,0,True
+Duplicate dim_listing listing_id,0,True
+Duplicate dim_host host_key,0,True
+Duplicate dim_date date_key,0,True
+Listing snapshot orphan listing keys,0,True
+Calendar orphan listing keys,0,True
+Calendar orphan date keys,0,True
+Review orphan listing keys,0,True
+Review orphan date keys,0,True

@@ -1,0 +1,8 @@
+table_name,row_count
+dim_host,762
+dim_neighbourhood,42
+dim_listing,3247
+dim_date,4836
+fact_listing_snapshot,3247
+fact_calendar,1185155
+fact_reviews,41265

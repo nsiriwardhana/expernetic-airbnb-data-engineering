@@ -1,0 +1,4 @@
+hypothesis,question,unit_of_analysis,outcome,test,reason,effect_size,confidence_interval
+H1,Entire-home versus private-room prices,Listing,Listing price,Mann-Whitney U,Independent groups with a skewed numerical outcome,Rank-biserial correlation,Bootstrap interval for median difference
+H2,Superhost versus non-superhost ratings,Host,Host-level average listing rating,Mann-Whitney U,"Independent host groups with bounded, non-normal ratings",Rank-biserial correlation,Bootstrap interval for median difference
+H3,Price by review-volume group,Listing,Listing price,Mann-Whitney U,Independent groups with a skewed numerical outcome,Rank-biserial correlation,Bootstrap interval for median difference

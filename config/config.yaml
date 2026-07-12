@@ -1,0 +1,25 @@
+project:
+  name: "Singapore Airbnb Data Engineering Pipeline"
+  city: "Singapore"
+
+paths:
+  raw_data: "data/raw/singapore"
+  processed_data: "data/processed"
+  quarantine_data: "data/quarantine"
+  output_data: "outputs"
+  database: "outputs/database/airbnb.duckdb"
+
+files:
+  listings: "listings.csv.gz"
+  calendar: "calendar.csv.gz"
+  reviews: "reviews.csv.gz"
+  neighbourhoods: "neighbourhoods.csv"
+  neighbourhoods_geojson: "neighbourhoods.geojson"
+
+validation:
+  minimum_price: 0
+  maximum_price: 10000
+  minimum_latitude: -90
+  maximum_latitude: 90
+  minimum_longitude: -180
+  maximum_longitude: 180

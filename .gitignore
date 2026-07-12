@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
+.env
+
+data/raw/
+data/processed/
+data/validated/
+data/quarantine/
+data/enriched/
+
+outputs/database/
+outputs/logs/

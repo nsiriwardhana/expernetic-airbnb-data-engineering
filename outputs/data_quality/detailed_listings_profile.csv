@@ -1,0 +1,111 @@
+dataset,column_name,data_type,row_count,null_count,null_percentage,unique_count,sample_values,minimum,maximum,mean
+Detailed Listings,id,int64,3097,0,0.0,3097,71609 | 71896 | 71903,71609.0,1.7168778693595476e+18,6.873474153054423e+17
+Detailed Listings,listing_url,str,3097,0,0.0,3097,https://www.airbnb.com/rooms/71609 | https://www.airbnb.com/rooms/71896 | https://www.airbnb.com/rooms/71903,,,
+Detailed Listings,scrape_id,int64,3097,0,0.0,1,20260629151954,20260629151954.0,20260629151954.0,20260629151954.0
+Detailed Listings,last_scraped,str,3097,0,0.0,3,2026-07-02 | 2026-06-29 | 2026-06-30,,,
+Detailed Listings,source,str,3097,0,0.0,2,previous scrape | city scrape,,,
+Detailed Listings,name,str,3097,0,0.0,3002,Ensuite Room (Room 1 & 2) near EXPO | B&B  Room 1 near Airport & EXPO | Room 2-near Airport & EXPO,,,
+Detailed Listings,description,str,3097,179,5.78,1946,"For 3 rooms.Book room 1&2 and room 4 | Like your own home, 24hrs access. | I have 3 bedrooms  in a charming British style townhouse for you and your family while you are visiting Singapore . This is the GREEN ROOM .<br />https://www.airbnb.co.uk/rooms/294281 <br /> Be sure to look at the other 2 rooms .<br /><br />BURGUNDY ROOM(https://www.airbnb.co.uk/rooms/369141   )<br />BLUE ROOM (https://www.airbnb.co.uk/rooms/369145)",,,
+Detailed Listings,neighborhood_overview,float64,3097,3097,100.0,1,,,,
+Detailed Listings,picture_url,str,3097,3,0.1,2911,https://a0.muscache.com/pictures/24453191/35803acb_original.jpg | https://a0.muscache.com/pictures/2440674/ac4f4442_original.jpg | https://a0.muscache.com/pictures/568743/7bc623e9_original.jpg,,,
+Detailed Listings,host_id,int64,3097,0,0.0,762,367042 | 1521514 | 1975201,218232.0,1.706906098815334e+18,8806882167576681.0
+Detailed Listings,host_url,str,3097,0,0.0,762,https://www.airbnb.com/users/show/367042 | https://www.airbnb.com/users/show/1521514 | https://www.airbnb.com/users/show/1975201,,,
+Detailed Listings,host_profile_id,float64,3097,59,1.91,734,1.462516725725391e+18 | 1.4625186372111946e+18 | 1.4625831873675064e+18,1.4625129226910062e+18,1.716722757589107e+18,1.470872534894245e+18
+Detailed Listings,host_profile_url,str,3097,69,2.23,743,https://www.airbnb.com/users/profile/1462516725725391209 | https://www.airbnb.com/users/profile/1462518637211194506 | https://www.airbnb.com/users/profile/1462583187367506541,,,
+Detailed Listings,host_name,str,3097,59,1.91,627,Belinda | Elizbeth | Adi,,,
+Detailed Listings,host_since,float64,3097,3097,100.0,1,,,,
+Detailed Listings,hosts_time_as_user_years,float64,3097,59,1.91,17,15.0 | 14.0 | 13.0,0.0,15.0,8.0
+Detailed Listings,hosts_time_as_user_months,float64,3097,59,1.91,13,5.0 | 6.0 | 3.0,0.0,11.0,5.88
+Detailed Listings,hosts_time_as_host_years,float64,3097,59,1.91,17,15.0 | 14.0 | 13.0,0.0,15.0,7.29
+Detailed Listings,hosts_time_as_host_months,float64,3097,59,1.91,13,5.0 | 6.0 | 3.0,0.0,11.0,5.79
+Detailed Listings,host_location,str,3097,1155,37.29,33,"Singapore | Barcelona, Spain | Berlin, Germany",,,
+Detailed Listings,host_about,str,3097,1129,36.45,350,"Hi My name is Belinda -Housekeeper 
+
+I would like to welcome you to my ""Homestay Website"" 
+
+
+Accomodation for: 
+
+- an extended stay for studies, min 3 months
+- business,
+- training in singapore
+ 
+
+Room rental are available for min 3month or longer .Room rental depending on the choice of a common sharing room (family suite) ,a standard room,a deluxe room or a triplet room which varies in sizes. We hope to give you a warm home feeling here with sweet dreams. Please forgive us if we cannot meet your  high expectations.We will try our best to make your stay as comfortable as a homestay.
+
+Regards
+Belinda | Hello !
+I am Elizabeth from Singapore.
+
+Looking forward to hosting you in our lovely little sunny island. | I like travelling a lot, as well as good food. 
+
+Singapore is not only a place for the future, but has an incredible rich history, which I think people should know about. Contact me if you have any questions!",,,
+Detailed Listings,host_response_time,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_response_rate,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_acceptance_rate,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_is_superhost,str,3097,59,1.91,3,f | t,,,
+Detailed Listings,host_thumbnail_url,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_picture_url,str,3097,59,1.91,723,https://a0.muscache.com/im/users/367042/profile_pic/1382521511/original.jpg?aki_policy=profile_x_medium | https://a0.muscache.com/im/users/1521514/profile_pic/1324398791/original.jpg?aki_policy=profile_x_medium | https://a0.muscache.com/im/users/1975201/profile_pic/1407484173/original.jpg?aki_policy=profile_x_medium,,,
+Detailed Listings,host_neighbourhood,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_listings_count,float64,3097,59,1.91,44,6.0 | 7.0 | 1.0,1.0,492.0,66.93
+Detailed Listings,host_total_listings_count,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_verifications,float64,3097,3097,100.0,1,,,,
+Detailed Listings,host_has_profile_pic,str,3097,59,1.91,3,t | f,,,
+Detailed Listings,host_identity_verified,str,3097,59,1.91,3,t | f,,,
+Detailed Listings,neighbourhood,float64,3097,3097,100.0,1,,,,
+Detailed Listings,neighbourhood_cleansed,str,3097,0,0.0,42,Tampines | Newton | River Valley,,,
+Detailed Listings,neighbourhood_group_cleansed,str,3097,0,0.0,5,East Region | Central Region | North-East Region,,,
+Detailed Listings,latitude,float64,3097,0,0.0,2404,1.34537 | 1.34754 | 1.34531,1.22272,1.4578019855396456,1.31
+Detailed Listings,longitude,float64,3097,0,0.0,2452,103.95887 | 103.95958 | 103.961,103.63457,103.9851761,103.84
+Detailed Listings,property_type,str,3097,0,0.0,42,Private room in villa | Private room in home | Private room in rental unit,,,
+Detailed Listings,room_type,str,3097,0,0.0,4,Private room | Entire home/apt | Hotel room,,,
+Detailed Listings,accommodates,int64,3097,0,0.0,14,2 | 1 | 4,1.0,16.0,2.74
+Detailed Listings,bathrooms,float64,3097,1945,62.8,15,1.0 | 1.5 | 2.0,0.5,13.0,1.29
+Detailed Listings,bathrooms_text,str,3097,10,0.32,39,1 private bath | Shared half-bath | 1 shared bath,,,
+Detailed Listings,bedrooms,float64,3097,1141,36.84,9,2.0 | 1.0 | 3.0,0.0,7.0,1.44
+Detailed Listings,beds,float64,3097,1807,58.35,14,1.0 | 8.0 | 3.0,1.0,22.0,1.7
+Detailed Listings,amenities,str,3097,0,0.0,2201,"[""Hangers"", ""BBQ grill"", ""Shared hot tub"", ""Cooking basics"", ""Long term stays allowed"", ""Free parking on premises"", ""Keypad"", ""Shampoo"", ""Air conditioning"", ""Fire pit"", ""TV"", ""Outdoor furniture"", ""Outdoor kitchen"", ""Essentials"", ""Self check-in"", ""Kitchen"", ""Refrigerator"", ""Washer"", ""Dedicated workspace"", ""Private backyard \u2013 Fully fenced"", ""Luggage dropoff allowed"", ""Wifi"", ""Fire extinguisher"", ""Hair dryer"", ""Outdoor dining area"", ""Free street parking"", ""Private entrance"", ""Iron"", ""Dryer"", ""Hot water"", ""Children\u2019s books and toys"", ""Smoke alarm""] | [""Dishes and silverware"", ""Drying rack for clothing"", ""Hangers"", ""Lock on bedroom door"", ""BBQ grill"", ""Shared hot tub"", ""Cooking basics"", ""Free parking on premises"", ""Keypad"", ""Coffee maker"", ""Shampoo"", ""Fire pit"", ""TV"", ""Outdoor furniture"", ""Outdoor kitchen"", ""Essentials"", ""Paid parking on premises"", ""Self check-in"", ""Kitchen"", ""Refrigerator"", ""Washer"", ""Dedicated workspace"", ""Private backyard \u2013 Fully fenced"", ""Cleaning products"", ""Wifi"", ""Extra pillows and blankets"", ""Hair dryer"", ""Outdoor dining area"", ""Free street parking"", ""Shower gel"", ""Iron"", ""Dryer"", ""Bed linens"", ""Hot water"", ""Private entrance"", ""AC - split type ductless system"", ""Smoke alarm""] | [""Lock on bedroom door"", ""BBQ grill"", ""Shared hot tub"", ""Cooking basics"", ""Free parking on premises"", ""Keypad"", ""Coffee maker"", ""Shampoo"", ""Fire pit"", ""TV"", ""Outdoor furniture"", ""Outdoor kitchen"", ""Essentials"", ""Self check-in"", ""Kitchen"", ""Washer"", ""Wifi"", ""Hair dryer"", ""Heating"", ""Outdoor dining area"", ""Free street parking"", ""Dryer"", ""Hot water"", ""AC - split type ductless system"", ""Smoke alarm""]",,,
+Detailed Listings,price,str,3097,505,16.31,1901,$31.71 | $14.66 | $26.24,,,
+Detailed Listings,price_quote_checkin_date,str,3097,310,10.01,138,2026-07-03 | 2026-07-10 | 2026-08-01,,,
+Detailed Listings,price_quote_checkout_date,str,3097,310,10.01,194,2026-10-03 | 2026-10-10 | 2026-11-01,,,
+Detailed Listings,price_quote_total_price,float64,3097,505,16.31,2004,2917.0 | 1348.49 | 2414.0,7.0,434212.0,3653.13
+Detailed Listings,price_quote_price_per_night,float64,3097,505,16.31,1901,31.71 | 14.66 | 26.24,0.08,13000.0,204.02
+Detailed Listings,price_quote_raw,str,3097,310,10.01,2444,"{""quote"": {""taxes"": null, ""currency"": ""SGD"", ""date_match"": null, ""service_fee"": null, ""total_price"": ""2917"", ""cleaning_fee"": null, ""is_available"": true, ""discount_amount"": null, ""price_per_night"": ""31.70652173913043478260869565"", ""nightly_subtotal"": null, ""discounted_subtotal"": null, ""raw_price_line_items"": [{""amount"": ""2916.99"", ""item_type"": ""other"", ""description"": ""Average monthly price"", ""price_string"": ""$2,916.99 SGD""}, {""amount"": ""2916.99"", ""item_type"": ""other"", ""description"": ""Total"", ""price_string"": ""$2,916.99 SGD""}], ""returned_checkin_date"": null, ""requested_checkin_date"": ""2026-07-03"", ""returned_checkout_date"": null, ""requested_checkout_date"": ""2026-10-03""}} | {""quote"": {""taxes"": null, ""currency"": ""SGD"", ""date_match"": null, ""service_fee"": null, ""total_price"": ""1348.49"", ""cleaning_fee"": null, ""is_available"": true, ""discount_amount"": ""208.53"", ""price_per_night"": ""14.6575"", ""nightly_subtotal"": null, ""discounted_subtotal"": ""1348.49"", ""raw_price_line_items"": [{""amount"": ""1557.02"", ""item_type"": ""other"", ""description"": ""Average monthly price"", ""price_string"": ""$1,557.02 SGD""}, {""amount"": ""-208.53"", ""item_type"": ""discount_amount"", ""description"": ""Monthly stay discount"", ""price_string"": ""-$208.53 SGD""}, {""amount"": ""1348.49"", ""item_type"": ""discounted_subtotal"", ""description"": ""Price after discount"", ""price_string"": ""$1,348.49 SGD""}], ""returned_checkin_date"": null, ""requested_checkin_date"": ""2026-07-03"", ""returned_checkout_date"": null, ""requested_checkout_date"": ""2026-10-03""}} | {""quote"": {""taxes"": null, ""currency"": ""SGD"", ""date_match"": null, ""service_fee"": null, ""total_price"": null, ""cleaning_fee"": null, ""is_available"": true, ""discount_amount"": ""273.27"", ""price_per_night"": null, ""nightly_subtotal"": null, ""discounted_subtotal"": null, ""raw_price_line_items"": [{""amount"": ""3017.76"", ""item_type"": ""other"", ""description"": ""Average monthly price"", ""price_string"": ""$3,017.76 SGD""}, {""amount"": ""-273.27"", ""item_type"": ""discount_amount"", ""description"": ""Monthly stay discount"", ""price_string"": ""-$273.27 SGD""}, {""amount"": ""2744.49"", ""item_type"": ""other"", ""description"": ""Total"", ""price_string"": ""$2,744.49 SGD""}], ""returned_checkin_date"": null, ""requested_checkin_date"": ""2026-07-03"", ""returned_checkout_date"": null, ""requested_checkout_date"": ""2026-10-03""}}",,,
+Detailed Listings,minimum_nights,int64,3097,0,0.0,43,92 | 93 | 730,1.0,730.0,52.17
+Detailed Listings,maximum_nights,int64,3097,0,0.0,58,1125 | 180 | 365,1.0,9999.0,720.5
+Detailed Listings,minimum_minimum_nights,int64,3097,0,0.0,43,92 | 93 | 730,1.0,730.0,52.17
+Detailed Listings,maximum_minimum_nights,int64,3097,0,0.0,39,92 | 93 | 730,1.0,730.0,52.98
+Detailed Listings,minimum_maximum_nights,int64,3097,0,0.0,65,1125 | 180 | 365,1.0,9999.0,662.63
+Detailed Listings,maximum_maximum_nights,int64,3097,0,0.0,58,1125 | 180 | 365,1.0,9999.0,720.5
+Detailed Listings,minimum_nights_avg_ntm,float64,3097,0,0.0,67,92.0 | 93.0 | 730.0,1.0,730.0,52.59
+Detailed Listings,maximum_nights_avg_ntm,float64,3097,0,0.0,215,1125.0 | 180.0 | 365.0,1.0,9999.0,676.87
+Detailed Listings,calendar_updated,float64,3097,3097,100.0,1,,,,
+Detailed Listings,has_availability,str,3097,42,1.36,3,t | f,,,
+Detailed Listings,availability_30,int64,3097,0,0.0,30,29 | 22 | 0,0.0,29.0,18.33
+Detailed Listings,availability_60,int64,3097,0,0.0,60,59 | 52 | 0,0.0,59.0,42.78
+Detailed Listings,availability_90,int64,3097,0,0.0,89,89 | 82 | 0,0.0,89.0,68.58
+Detailed Listings,availability_365,int64,3097,0,0.0,286,90 | 364 | 83,0.0,364.0,281.78
+Detailed Listings,calendar_last_scraped,str,3097,0,0.0,3,2026-07-02 | 2026-06-29 | 2026-06-30,,,
+Detailed Listings,number_of_reviews,int64,3097,0,0.0,165,19 | 24 | 46,0.0,1492.0,12.48
+Detailed Listings,number_of_reviews_ltm,int64,3097,0,0.0,63,0 | 19 | 40,0.0,245.0,2.19
+Detailed Listings,number_of_reviews_l30d,int64,3097,0,0.0,10,0 | 7 | 1,0.0,12.0,0.1
+Detailed Listings,availability_eoy,int64,3097,0,0.0,156,90 | 182 | 83,0.0,185.0,145.59
+Detailed Listings,number_of_reviews_ly,int64,3097,0,0.0,63,0 | 1 | 18,0.0,344.0,2.18
+Detailed Listings,estimated_occupancy_l365d,int64,3097,0,0.0,53,0 | 114 | 255,0.0,255.0,16.22
+Detailed Listings,estimated_revenue_l365d,float64,3097,505,16.31,665,0.0 | 12996.0 | 40545.0,0.0,103152.0,2999.59
+Detailed Listings,first_review,str,3097,1361,43.95,1314,2011-12-19 | 2011-07-30 | 2011-05-04,,,
+Detailed Listings,last_review,str,3097,1361,43.95,1048,2020-01-17 | 2019-10-13 | 2020-01-09,,,
+Detailed Listings,review_scores_rating,float64,3097,1361,43.95,128,4.44 | 4.16 | 4.41,1.0,5.0,4.54
+Detailed Listings,review_scores_accuracy,float64,3097,1361,43.95,128,4.37 | 4.22 | 4.39,1.0,5.0,4.58
+Detailed Listings,review_scores_cleanliness,float64,3097,1361,43.95,128,4.0 | 4.09 | 4.52,1.0,5.0,4.52
+Detailed Listings,review_scores_checkin,float64,3097,1361,43.95,91,4.63 | 4.43 | 4.5,1.0,5.0,4.74
+Detailed Listings,review_scores_communication,float64,3097,1361,43.95,109,4.78 | 4.43 | 4.64,1.0,5.0,4.71
+Detailed Listings,review_scores_location,float64,3097,1362,43.98,109,4.26 | 4.17 | 4.5,1.0,5.0,4.7
+Detailed Listings,review_scores_value,float64,3097,1362,43.98,132,4.32 | 4.04 | 4.36,1.0,5.0,4.43
+Detailed Listings,license,str,3097,1356,43.78,144,S0448 | Authorised Serviced Apartment | Exempt,,,
+Detailed Listings,instant_bookable,float64,3097,3097,100.0,1,,,,
+Detailed Listings,calculated_host_listings_count,int64,3097,0,0.0,34,5 | 7 | 1,1.0,215.0,41.99
+Detailed Listings,calculated_host_listings_count_entire_homes,int64,3097,0,0.0,24,0 | 1 | 2,0.0,215.0,29.25
+Detailed Listings,calculated_host_listings_count_private_rooms,int64,3097,0,0.0,27,5 | 6 | 1,0.0,89.0,12.28
+Detailed Listings,calculated_host_listings_count_shared_rooms,int64,3097,0,0.0,9,0 | 4 | 1,0.0,13.0,0.2
+Detailed Listings,reviews_per_month,float64,3097,1361,43.95,253,0.11 | 0.13 | 0.25,0.01,23.1,0.51

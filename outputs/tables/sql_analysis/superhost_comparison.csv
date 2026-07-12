@@ -1,0 +1,4 @@
+superhost_status,host_count,listing_count,median_price,average_price,average_rating,average_occupancy_proxy_percentage,average_detailed_review_count
+Non-Superhost,691,2630,114.41,199.61,4.49,22.79,10.55
+Superhost,42,408,188.0,231.58,4.79,21.41,26.05
+Unknown,29,59,136.0,185.53,4.09,32.77,4.64

@@ -1,0 +1,20 @@
+dataset,column_name,data_type,row_count,null_count,null_percentage,unique_count,sample_values,minimum,maximum,mean
+Summary Listings,id,int64,3247,0,0.0,3247,71609 | 71896 | 71903,71609.0,1.7168778693595476e+18,7.228867679654963e+17
+Summary Listings,name,str,3247,0,0.0,3113,Ensuite Room (Room 1 & 2) near EXPO | B&B  Room 1 near Airport & EXPO | Room 2-near Airport & EXPO,,,
+Summary Listings,host_id,float64,3247,150,4.62,763,367042.0 | 1521514.0 | 17526618.0,218232.0,1.706906098815334e+18,8806882167576681.0
+Summary Listings,host_profile_id,float64,3247,219,6.74,743,1.462516725725391e+18 | 1.4625186372111946e+18 | 1.463012202233842e+18,1.4625129226910062e+18,1.716722757589107e+18,1.4709137841789627e+18
+Summary Listings,host_name,str,3247,209,6.44,627,Belinda | Elizbeth | Royal,,,
+Summary Listings,neighbourhood_group,str,3247,0,0.0,5,East Region | Central Region | West Region,,,
+Summary Listings,neighbourhood,str,3247,0,0.0,42,Tampines | Newton | Outram,,,
+Summary Listings,latitude,float64,3247,0,0.0,2423,1.34537 | 1.34754 | 1.34531,1.22272,1.4578019855396456,1.31
+Summary Listings,longitude,float64,3247,0,0.0,2475,103.95887 | 103.95958 | 103.961,103.63457,103.9851761,103.85
+Summary Listings,room_type,str,3247,0,0.0,4,Private room | Hotel room | Entire home/apt,,,
+Summary Listings,price,float64,3247,505,15.55,586,32.0 | 15.0 | 26.0,0.0,13000.0,204.26
+Summary Listings,minimum_nights,int64,3247,0,0.0,43,92 | 93 | 730,1.0,730.0,49.81
+Summary Listings,number_of_reviews,int64,3247,0,0.0,169,19 | 24 | 46,0.0,1492.0,12.71
+Summary Listings,last_review,str,3247,1408,43.36,1061,2020-01-17 | 2019-10-13 | 2020-01-09,,,
+Summary Listings,reviews_per_month,float64,3247,1408,43.36,278,0.11 | 0.13 | 0.25,0.01,45.62,0.63
+Summary Listings,calculated_host_listings_count,float64,3247,150,4.62,35,5.0 | 7.0 | 4.0,1.0,215.0,41.99
+Summary Listings,availability_365,int64,3247,0,0.0,294,90 | 364 | 362,0.0,364.0,282.25
+Summary Listings,number_of_reviews_ltm,int64,3247,0,0.0,71,0 | 19 | 40,0.0,608.0,2.82
+Summary Listings,license,str,3247,1506,46.38,144,S0448 | Authorised Serviced Apartment | Exempt,,,
